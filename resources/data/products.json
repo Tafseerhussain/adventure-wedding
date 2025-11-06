@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Sunset Arch Bouquet",
+        "price": "€45",
+        "short": "A warm bouquet with sunset tones.",
+        "desc": "This bouquet features orange roses, dried wheat, and eucalyptus for a boho-chic look.",
+        "image": "https://picsum.photos/seed/p1/600/400"
+    },
+    {
+        "id": 2,
+        "title": "Seaside Corsage",
+        "price": "€30",
+        "short": "Delicate seaside-inspired corsage.",
+        "desc": "Small corsage with sea-glass colors and minimal foliage, great for beach weddings.",
+        "image": "https://picsum.photos/seed/p2/600/400"
+    },
+    {
+        "id": 3,
+        "title": "Forest Please Boutonniere",
+        "price": "€12",
+        "short": "Mossy and green boutonniere.",
+        "desc": "Rustic boutonniere using moss, fern and a single small rose.",
+        "image": "https://picsum.photos/seed/p3/600/400"
+    },
+    {
+        "id": 4,
+        "title": "Vintage Headpiece",
+        "price": "€70",
+        "short": "Gilded leaves and pearls.",
+        "desc": "Handmade headpiece with pearl accents and brass filigree for a vintage look.",
+        "image": "https://picsum.photos/seed/p4/600/400"
+    },
+    {
+        "id": 5,
+        "title": "Boho Arch Garland",
+        "price": "€120",
+        "short": "Large arch garland for ceremonies.",
+        "desc": "Full garland mixing dried grasses, eucalyptus and pampas for a dramatic arch.",
+        "image": "https://picsum.photos/seed/p5/600/400"
+    },
+    {
+        "id": 6,
+        "title": "Petal Confetti Pack",
+        "price": "€8",
+        "short": "Biodegradable petal confetti.",
+        "desc": "A pack of hand-dried petals in mixed colors—safe and compostable.",
+        "image": "https://picsum.photos/seed/p6/600/400"
+    }
+]

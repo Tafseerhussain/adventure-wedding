@@ -1,0 +1,317 @@
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+
+// Global variables
+$brand: #0f766e;
+$muted: #6b7280;
+$bg: #ffffff;
+$radius: 10px;
+$shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+header .d-md-none[ x-show ] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+}
+
+.mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    background: white;
+}
+
+html {
+    scroll-behavior: smooth; /* enables smooth scroll */
+}
+section {
+    padding: 80px 0;
+}
+.navbar a.active {
+    color: #198754 !important;
+    font-weight: 600;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    background-color: #f9fafb;
+    color: #1e293b;
+    scroll-behavior: smooth;
+    height: 100%;
+    min-height: 100%;
+}
+
+// Utility container
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+/* ---------------------------------------------------
+   HEADER
+--------------------------------------------------- */
+.site-header {
+    background: $bg;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        font-weight: 700;
+        color: $brand;
+        font-size: 1.6rem;
+        text-decoration: none;
+
+        &:hover {
+            color: darken($brand, 10%);
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+
+        a {
+            color: $muted;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.2s ease;
+
+            &:hover {
+                color: $brand;
+            }
+        }
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: $brand;
+        display: none;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+        flex-direction: column;
+        padding: 1rem;
+        background: white;
+        border-top: 1px solid #e2e8f0;
+        animation: slideDown 0.3s ease;
+
+        a {
+            padding: 0.5rem 0;
+            color: $muted;
+            font-weight: 500;
+
+            &:hover {
+                color: $brand;
+            }
+        }
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            display: none;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        .mobile-nav.active {
+            display: flex;
+        }
+    }
+}
+
+/* ---------------------------------------------------
+   PRODUCT GRID & CARD
+--------------------------------------------------- */
+.products-header {
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1e293b;
+    }
+
+    p {
+        color: $muted;
+        font-size: 1rem;
+    }
+}
+
+.product-card {
+    background: white;
+    border-radius: $radius;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow;
+    transition: all 0.25s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .p-4 {
+        padding: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1e293b;
+    }
+
+    p {
+        color: #475569;
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+    }
+
+    .price {
+        color: $brand;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    button {
+        background: white;
+        border: 1px solid #d1d5db;
+        border-radius: $radius;
+        padding: 0.6rem;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #f1f5f9;
+            border-color: $brand;
+            color: $brand;
+        }
+    }
+}
+
+/* ---------------------------------------------------
+   MODAL (Bootstrap-like)
+--------------------------------------------------- */
+
+/* Hide Alpine's cloaked elements before load */
+/* Hide Alpine cloaked elements until Alpine boots */
+[x-cloak] {
+    display: none !important;
+}
+
+/* When any modal opens, disable background scroll */
+body.overflow-hidden {
+    overflow: hidden !important;
+}
+
+/* Base overlay styling */
+.aw-modal,
+.fixed[inset-0][x-show] {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: none; /* hidden by default */
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(2px);
+    z-index: 9999 !important;
+    transition: opacity 0.25s ease-in-out;
+    opacity: 0;
+}
+
+/* When Alpine toggles it on */
+[x-show="open"] {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal box */
+.aw-modal > div,
+.fixed[inset-0][x-show] > div {
+    background: #fff;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.25s ease;
+}
+
+/* When shown */
+[x-show="open"] > div {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* Smooth entry keyframes */
+@keyframes modalIn {
+    from {
+        transform: scale(0.94) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    color: $muted;
+    font-size: 0.9rem;
+
+    a {
+        color: $brand;
+        text-decoration: none;
+
+        &:hover {
+            color: darken($brand, 8%);
+        }
+    }
+}

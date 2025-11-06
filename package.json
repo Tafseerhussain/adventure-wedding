@@ -10,8 +10,32 @@
         "@tailwindcss/vite": "^4.0.0",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
-        "laravel-vite-plugin": "^2.0.0",
+        "laravel-vite-plugin": "^2.0.1",
+        "sass": "^1.93.3",
         "tailwindcss": "^4.0.0",
-        "vite": "^7.0.7"
+        "vite": "^7.2.1"
+    },
+    "name": "adventure-wedding",
+    "version": "1.0.0",
+    "description": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\" alt=\"Laravel Logo\"></a></p>",
+    "main": "vite.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://muhammad676@github.com/Tafseerhussain/adventure-wedding.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Tafseerhussain/adventure-wedding/issues"
+    },
+    "homepage": "https://github.com/Tafseerhussain/adventure-wedding#readme",
+    "dependencies": {
+        "alpinejs": "^3.15.1",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
     }
 }
